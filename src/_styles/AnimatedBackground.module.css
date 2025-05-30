@@ -1,0 +1,32 @@
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    /* filter: blur(20px); */
+    /* opacity: 1; */
+    animation: move 20s infinite ease-in-out, resize 10s infinite ease-in-out;
+    z-index: 0;
+  }
+  
+  @keyframes move {
+    0% {
+      transform: translate(0, 0);
+    }
+    50% {
+      transform: translate(var(--x), var(--y));
+    }
+    100% {
+      transform: translate(0, 0);
+    }
+  }
+  
+  @keyframes resize {
+    0%, 100% {
+      width: var(--size);
+      height: var(--size);
+    }
+    50% {
+      width: calc(var(--size) * 1.5);
+      height: calc(var(--size) * 1.5);
+    }
+  }
+  
